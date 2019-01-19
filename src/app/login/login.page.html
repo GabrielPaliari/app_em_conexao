@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+      <ion-icon class="cloudicon" slot="start" name="cloud"></ion-icon>
+      <ion-title>
+        Login
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>   
+    <ion-list>
+      <ion-radio-group [(ngModel)]="userType">
+        <ion-list-header>
+          Tipo de usuário
+        </ion-list-header>
+      
+        <ion-item>
+          <ion-label>Paciente</ion-label>
+          <ion-radio color="secondary" value="patient"></ion-radio>
+        </ion-item>
+      
+        <ion-item >
+          <ion-label>Médico</ion-label>
+          <ion-radio color="secondary" value="doctor"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-list> 
+      <ion-item>
+        <ion-label color="secondary" floating>Usuário</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="secondary" floating>Senha</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    
+    <ion-button (click)="login()" margin float-right color="secondary">
+      Login
+    </ion-button>
+  
+  </ion-content>
+  

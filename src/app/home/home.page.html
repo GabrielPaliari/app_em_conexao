@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <!-- <ion-icon slot="start" color="secondary" name="cloud"></ion-icon> -->
+    <ion-title>
+      Em Conexão
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>    
+    <ion-card>
+      <ion-card-header>
+        Estado dos Pacientes
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Estado dos Pacientes
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #doughnutCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Seu Histórico
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="user.type === 'doctor'" class="welcome-card">
+      <ion-img src="/assets/doctor.jpg"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>Esclerose Múltipla</ion-card-subtitle>
+        <ion-card-title>Você pode ajudar!</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Este App foi feito para você conseguir a ajudar o seu paciente com esclerose múltipla. 
+           Ele trará os dados dos testes de 9 pinos feitos pelos seus pacientes, gerando gráficos e 
+           possibilitando um melhor acompanhamento da doença. Assim você pode mudar a dose do remédio e até agendar consultas por aqui.</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="user.type === 'patient'" class="welcome-card">
+      <ion-img src="/assets/doctor2.jpeg"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>Esclerose Múltipla</ion-card-subtitle>
+        <ion-card-title>Nós podemos ajudar!</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>
+          Este App foi feito para você conseguir acompanhar a sua doença de forma empoderada.
+          <br>
+          Aqui você pode fazer o teste dos 9 pinos, acompanhando como está a sua destreza motora 
+          e a evolução da sua doença. 
+          <br>
+          Além disso você pode agendar consultas e até mesmo saber mais sobre a doença
+        </p>
+      </ion-card-content>
+    </ion-card>
+    <ion-list *ngIf="user.type === 'doctor'">    
+      <ion-item>
+        <ion-icon slot="start" color="secondary" name="contacts"></ion-icon>
+        <ion-label>Lista de pacientes</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" color="secondary" name="calendar"></ion-icon>
+        <ion-label>Agendar Consulta</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" color="secondary" name="chatbubbles"></ion-icon>
+        <ion-label>Mandar mensagem</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="user.type === 'patient'">
+      <ion-list-header>        
+        <ion-label>Escolha uma ação</ion-label>        
+      </ion-list-header>      
+      <ion-item>
+        <ion-icon slot="start" color="secondary" name="book"></ion-icon>
+        <ion-label>Instruções Para o Teste</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" color="secondary" name="play"></ion-icon>
+        <ion-label>Realizar Teste</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" color="secondary" name="school"></ion-icon>
+        <ion-label>Saber Mais sobre a doença</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" color="secondary" name="analytics"></ion-icon>
+        <ion-label>Seu Histórico</ion-label>
+      </ion-item>      
+    </ion-list>
+</ion-content>
