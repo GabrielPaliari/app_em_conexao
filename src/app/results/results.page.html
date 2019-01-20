@@ -1,9 +1,122 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>results</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button *ngIf="!history"></ion-menu-button>
+      <ion-back-button *ngIf="history"></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-icon slot="start" color="secondary" name="cloud"></ion-icon> -->
+    <ion-title>
+      {{ user.type === 'doctor' ? 'Análise Geral' : 'Seu Histórico'}}
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>    
+    <ion-card *ngIf="user.type === 'doctor' && !history">
+      <ion-card-header>
+        Análise geral dos Pacientes
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
 
+    <ion-card *ngIf="user.type === 'doctor' && !history">
+      <ion-card-header>
+        Estado dos Pacientes
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #doughnutCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="user.type === 'patient' || history">
+      <ion-card-header>
+        Testes do Último Mês
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-list *ngIf="user.type === 'doctor' && !history">
+      <ion-list-header>Lista de Pacientes</ion-list-header> 
+      
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/avatar-girl.jpeg">
+        </ion-avatar>
+        <ion-label>Larissa</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/avatar-men.jpeg">
+        </ion-avatar>
+        <ion-label>Roberto</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/avatar-girl.jpeg">
+        </ion-avatar>
+        <ion-label>Cibele</ion-label>
+      </ion-item>
+      
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/avatar-girl.jpeg">
+        </ion-avatar>
+        <ion-label>Bruna</ion-label>
+      </ion-item>
+      
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/avatar-men.jpeg">
+        </ion-avatar>
+        <ion-label>Felipe</ion-label>
+      </ion-item>
+      
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/avatar-girl.jpeg">
+        </ion-avatar>
+        <ion-label>João da Silva</ion-label>
+      </ion-item>
+      
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/avatar-men.jpeg">
+        </ion-avatar>
+        <ion-label>Maria Aparecida</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="user.type === 'patient' || history">  
+      <ion-list-header>Lista de Testes</ion-list-header>    
+      <ion-item>
+        <ion-icon color="secondary" name="timer" item-start></ion-icon>
+        <ion-label>&nbsp; Teste 1</ion-label>      
+        <ion-label>03:55 min</ion-label>      
+        <ion-note slot="end">20/03/2019 - 3:43pm</ion-note>      
+      </ion-item>
+      <ion-item>
+        <ion-icon color="secondary" name="timer" item-start></ion-icon>
+        <ion-label>&nbsp; Teste 2</ion-label>      
+        <ion-label>04:36 min</ion-label>      
+        <ion-note slot="end">18/03/2019 - 9:02am</ion-note>      
+      </ion-item>
+      <ion-item>
+        <ion-icon color="secondary" name="timer" item-start></ion-icon>
+        <ion-label>&nbsp; Teste 3</ion-label>      
+        <ion-label>04:50 min</ion-label>      
+        <ion-note slot="end">13/03/2019 - 11:40am</ion-note>      
+      </ion-item>
+      <ion-item>
+        <ion-icon color="secondary" name="timer" item-start></ion-icon>
+        <ion-label>&nbsp; Teste 4</ion-label>      
+        <ion-label>04:55 min</ion-label>      
+        <ion-note slot="end">10/03/2019 - 05:35pm</ion-note>      
+      </ion-item>      
+    </ion-list>
 </ion-content>

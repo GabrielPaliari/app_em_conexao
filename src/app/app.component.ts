@@ -23,6 +23,12 @@ export class AppComponent {
       type: 'both'
     },
     {
+      title: 'Análise Geral',
+      url: '/results',
+      icon: 'analytics',
+      type: 'doctor'
+    },
+    {
       title: 'Lista de pacientes',
       url: '/patients',
       icon: 'contacts',
@@ -35,27 +41,21 @@ export class AppComponent {
       type: 'doctor'
     },
     {
-      title: 'Mandar Mensagem',
-      url: '/chat',
-      icon: 'chatbubbles',
-      type: 'doctor'
-    },
-    {
       title: 'Instruões para o Teste',
-      url: '/intructions',
+      url: '/instructions',
       icon: 'book',
-      type: 'patient'
-    },
-    {
-      title: 'Saber Mais',
-      url: '/knowmore',
-      icon: 'school',
       type: 'patient'
     },
     {
       title: 'Seu Histórico',
       url: '/analytics',
       icon: 'analytics',
+      type: 'patient'
+    },
+    {
+      title: 'Saber Mais',
+      url: '/knowmore',
+      icon: 'school',
       type: 'patient'
     },
   ];

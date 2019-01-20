@@ -11,32 +11,6 @@
 </ion-header>
 
 <ion-content>    
-    <ion-card>
-      <ion-card-header>
-        Estado dos Pacientes
-      </ion-card-header>
-      <ion-card-content>
-        <canvas #barCanvas></canvas>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-card-header>
-        Estado dos Pacientes
-      </ion-card-header>
-      <ion-card-content>
-        <canvas #doughnutCanvas></canvas>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-card-header>
-        Seu Histórico
-      </ion-card-header>
-      <ion-card-content>
-        <canvas #lineCanvas></canvas>
-      </ion-card-content>
-    </ion-card>
     <ion-card *ngIf="user.type === 'doctor'" class="welcome-card">
       <ion-img src="/assets/doctor.jpg"></ion-img>
       <ion-card-header>
@@ -67,38 +41,34 @@
       </ion-card-content>
     </ion-card>
     <ion-list *ngIf="user.type === 'doctor'">    
-      <ion-item>
+      <ion-item routerLink="/results">
+        <ion-icon slot="start" color="secondary" name="analytics"></ion-icon>
+        <ion-label>Análise Geral</ion-label>
+      </ion-item>
+      <ion-item routerLink="/patients">
         <ion-icon slot="start" color="secondary" name="contacts"></ion-icon>
         <ion-label>Lista de pacientes</ion-label>
       </ion-item>
       <ion-item>
         <ion-icon slot="start" color="secondary" name="calendar"></ion-icon>
         <ion-label>Agendar Consulta</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon slot="start" color="secondary" name="chatbubbles"></ion-icon>
-        <ion-label>Mandar mensagem</ion-label>
-      </ion-item>
+      </ion-item>      
     </ion-list>
     <ion-list *ngIf="user.type === 'patient'">
       <ion-list-header>        
         <ion-label>Escolha uma ação</ion-label>        
       </ion-list-header>      
-      <ion-item>
+      <ion-item routerLink="/instructions">
         <ion-icon slot="start" color="secondary" name="book"></ion-icon>
         <ion-label>Instruções Para o Teste</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon slot="start" color="secondary" name="play"></ion-icon>
-        <ion-label>Realizar Teste</ion-label>
-      </ion-item>
+      </ion-item>      
+      <ion-item routerLink="/results">
+        <ion-icon slot="start" color="secondary" name="analytics"></ion-icon>
+        <ion-label>Seu Histórico</ion-label>
+      </ion-item> 
       <ion-item>
         <ion-icon slot="start" color="secondary" name="school"></ion-icon>
         <ion-label>Saber Mais sobre a doença</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon slot="start" color="secondary" name="analytics"></ion-icon>
-        <ion-label>Seu Histórico</ion-label>
-      </ion-item>      
+      </ion-item>           
     </ion-list>
 </ion-content>

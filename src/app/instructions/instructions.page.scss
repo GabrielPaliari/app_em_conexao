@@ -1,0 +1,22 @@
+.instr-slide {
+  display: flex;
+  flex-direction: column;  
+  justify-content: end;  
+}
+
+.slides-wrapper {
+  height: 100%;
+}
+
+.big-number {
+  font-size: 55px;
+  color: #24d6ea;
+  font-weight: bold;  
+  margin-top: 100px;  
+}
+
+.slide-title {
+  margin-top: 135px;  
+  font-weight: bold;  
+  color: #24d6ea;
+}

@@ -1,9 +1,66 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>patients</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content padding>
-
-</ion-content>
+    <ion-toolbar color="secondary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>        
+      </ion-buttons>
+      <!-- <ion-icon slot="start" color="secondary" name="cloud"></ion-icon> -->
+      <ion-title>
+        Lista de Pacientes
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>    
+  
+      <ion-list>
+        <ion-item [routerLink]="['/results', { history: true }]">
+          <ion-avatar slot="start">
+            <img src="assets/avatar-girl.jpeg">
+          </ion-avatar>
+          <ion-label>Larissa</ion-label>
+        </ion-item>
+  
+        <ion-item [routerLink]="['/results', { history: true }]">
+          <ion-avatar slot="start">
+            <img src="assets/avatar-men.jpeg">
+          </ion-avatar>
+          <ion-label>Roberto</ion-label>
+        </ion-item>
+  
+        <ion-item [routerLink]="['/results', { history: true }]">
+          <ion-avatar slot="start">
+            <img src="assets/avatar-girl.jpeg">
+          </ion-avatar>
+          <ion-label>Cibele</ion-label>
+        </ion-item>
+        
+        <ion-item [routerLink]="['/results', { history: true }]">
+          <ion-avatar slot="start">
+            <img src="assets/avatar-girl.jpeg">
+          </ion-avatar>
+          <ion-label>Bruna</ion-label>
+        </ion-item>
+        
+        <ion-item [routerLink]="['/results', { history: true }]">
+          <ion-avatar slot="start">
+            <img src="assets/avatar-men.jpeg">
+          </ion-avatar>
+          <ion-label>Felipe</ion-label>
+        </ion-item>
+        
+        <ion-item [routerLink]="['/results', { history: true }]">
+          <ion-avatar slot="start">
+            <img src="assets/avatar-girl.jpeg">
+          </ion-avatar>
+          <ion-label>João da Silva</ion-label>
+        </ion-item>
+        
+        <ion-item [routerLink]="['/results', { history: true }]">
+          <ion-avatar slot="start">
+            <img src="assets/avatar-men.jpeg">
+          </ion-avatar>
+          <ion-label>Maria Aparecida</ion-label>
+        </ion-item>
+      </ion-list>
+  </ion-content>
+  
