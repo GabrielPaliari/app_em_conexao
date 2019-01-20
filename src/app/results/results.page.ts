@@ -37,6 +37,7 @@ export class ResultsPage implements OnInit, AfterViewInit {
         data: {
             labels: ['Piorando', 'Mantendo', 'Indeterminado', 'Melhorando'],
             datasets: [{
+                label: 'Número de pacientes',
                 data: [8, 19, 3, 10],
                 backgroundColor: [
                   '#0bb8ccAA',
@@ -52,15 +53,6 @@ export class ResultsPage implements OnInit, AfterViewInit {
                 ],
                 borderWidth: 1
             }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
         }
 
     }) : '';

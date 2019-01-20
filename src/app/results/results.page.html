@@ -5,7 +5,10 @@
       <ion-back-button *ngIf="history"></ion-back-button>
     </ion-buttons>
     <!-- <ion-icon slot="start" color="secondary" name="cloud"></ion-icon> -->
-    <ion-title>
+    <ion-title *ngIf="user.type === 'doctor'">
+      {{ history ? 'Análise Individual' : 'Análise Geral'}}
+    </ion-title>
+    <ion-title *ngIf="user.type === 'patient'">
       {{ user.type === 'doctor' ? 'Análise Geral' : 'Seu Histórico'}}
     </ion-title>
   </ion-toolbar>

@@ -41,14 +41,14 @@ export class AppComponent {
       type: 'doctor'
     },
     {
-      title: 'Instruões para o Teste',
+      title: 'Instruções para o Teste',
       url: '/instructions',
       icon: 'book',
       type: 'patient'
     },
     {
       title: 'Seu Histórico',
-      url: '/analytics',
+      url: '/results',
       icon: 'analytics',
       type: 'patient'
     },

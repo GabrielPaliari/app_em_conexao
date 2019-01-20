@@ -1,6 +1,6 @@
 export class UserService {
   user = {
-    type: 'patient',
-    // type: 'doctor'
+    // type: 'patient',
+    type: 'doctor'
   };
 }
