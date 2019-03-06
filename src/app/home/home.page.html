@@ -5,41 +5,41 @@
     </ion-buttons>
     <!-- <ion-icon slot="start" color="secondary" name="cloud"></ion-icon> -->
     <ion-title>
-      Em Conexão
+      EMconexão
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>    
     <ion-card *ngIf="user.type === 'doctor'" class="welcome-card">
-      <ion-img src="/assets/doctor.jpg"></ion-img>
+      <ion-img src="/assets/doctor.jpg"></ion-img>    
       <ion-card-header>
-        <ion-card-subtitle>Esclerose Múltipla</ion-card-subtitle>
+        <ion-card-subtitle>Esclerose Múltipla - Acompanhamento de perto, detecção no tempo certo</ion-card-subtitle>
         <ion-card-title>Você pode ajudar!</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>Este App foi feito para você conseguir a ajudar o seu paciente com esclerose múltipla. 
-           Ele trará os dados dos testes de 9 pinos feitos pelos seus pacientes, gerando gráficos e 
-           possibilitando um melhor acompanhamento da doença. Assim você pode mudar a dose do remédio e até agendar consultas por aqui.</p>
+        <p>
+            Esse aplicativo foi feito para você conseguir acompanhar de perto seus pacientes com esclerose múltipla (EM). 
+            <br>
+            Você pode consultar os resultados de realização do teste dos nove buracos e pinos (9-HPT) pelos seus pacientes. Além disso, você é alertado caso seja detectada uma piora significativa na destreza motora de algum paciente e você pode enviar mensagens para os pacientes.
+        </p>
       </ion-card-content>
     </ion-card>
     <ion-card *ngIf="user.type === 'patient'" class="welcome-card">
       <ion-img src="/assets/doctor2.jpeg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>Esclerose Múltipla</ion-card-subtitle>
+      <ion-card-header>                                      
+        <ion-card-subtitle>Esclerose Múltipla - Acompanhamento de perto, detecção no tempo certo</ion-card-subtitle>
         <ion-card-title>Nós podemos ajudar!</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <p>
-          Este App foi feito para você conseguir acompanhar a sua doença de forma empoderada.
+          Esse aplicativo foi feito para que você seja empoderado a acompanhar a evolução do seu quadro de esclerose múltipla (EM). 
           <br>
-          Aqui você pode fazer o teste dos 9 pinos, acompanhando como está a sua destreza motora 
-          e a evolução da sua doença. 
-          <br>
-          Além disso você pode agendar consultas e até mesmo saber mais sobre a doença
+          Aqui você pode realizar o teste dos nove buracos e pinos (9-HPT), monitorando de perto como está sua destreza motora. Além disso, você pode registrar as datas de suas consultas médicas e obter mais informações sobre a EM.
         </p>
       </ion-card-content>
     </ion-card>
+    <div *ngFor="let item of data">{{ item }}</div> 
     <ion-list *ngIf="user.type === 'doctor'">    
       <ion-item routerLink="/results">
         <ion-icon slot="start" color="secondary" name="analytics"></ion-icon>
@@ -48,11 +48,7 @@
       <ion-item routerLink="/patients">
         <ion-icon slot="start" color="secondary" name="contacts"></ion-icon>
         <ion-label>Lista de pacientes</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon slot="start" color="secondary" name="calendar"></ion-icon>
-        <ion-label>Agendar Consulta</ion-label>
-      </ion-item>      
+      </ion-item>       
     </ion-list>
     <ion-list *ngIf="user.type === 'patient'">
       <ion-list-header>        

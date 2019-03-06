@@ -95,31 +95,19 @@
       </ion-item>
     </ion-list>
 
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="startTest()">
+        <ion-icon name="play"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
     <ion-list *ngIf="user.type === 'patient' || history">  
-      <ion-list-header>Lista de Testes</ion-list-header>    
-      <ion-item>
+      <ion-list-header>Mão Direita</ion-list-header>    
+      <ion-list-header>Tempo de Teste &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data</ion-list-header>       
+      <ion-item *ngFor="let data of datas; let i = index">
         <ion-icon color="secondary" name="timer" item-start></ion-icon>
-        <ion-label>&nbsp; Teste 1</ion-label>      
-        <ion-label>03:55 min</ion-label>      
-        <ion-note slot="end">20/03/2019 - 3:43pm</ion-note>      
-      </ion-item>
-      <ion-item>
-        <ion-icon color="secondary" name="timer" item-start></ion-icon>
-        <ion-label>&nbsp; Teste 2</ion-label>      
-        <ion-label>04:36 min</ion-label>      
-        <ion-note slot="end">18/03/2019 - 9:02am</ion-note>      
-      </ion-item>
-      <ion-item>
-        <ion-icon color="secondary" name="timer" item-start></ion-icon>
-        <ion-label>&nbsp; Teste 3</ion-label>      
-        <ion-label>04:50 min</ion-label>      
-        <ion-note slot="end">13/03/2019 - 11:40am</ion-note>      
-      </ion-item>
-      <ion-item>
-        <ion-icon color="secondary" name="timer" item-start></ion-icon>
-        <ion-label>&nbsp; Teste 4</ion-label>      
-        <ion-label>04:55 min</ion-label>      
-        <ion-note slot="end">10/03/2019 - 05:35pm</ion-note>      
-      </ion-item>      
-    </ion-list>
+        <ion-label>&nbsp; {{ tempos[i] }}s</ion-label>      
+        <ion-label>{{ data }}</ion-label>                    
+      </ion-item>    
+    </ion-list>    
 </ion-content>
+

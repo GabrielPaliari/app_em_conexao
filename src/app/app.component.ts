@@ -4,6 +4,17 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { UserService } from './user.service';
+import * as firebase from 'firebase';
+
+const config = {
+  apiKey: 'AIzaSyDwwdWWC4Z0-EdMCLdq0L77XcFytTXsYoE',
+  authDomain: 'em-conexao.firebaseapp.com',
+  databaseURL: 'https://em-conexao.firebaseio.com',
+  projectId: 'em-conexao',
+  storageBucket: 'em-conexao.appspot.com',
+  messagingSenderId: '727433293149'
+};
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
@@ -33,13 +44,7 @@ export class AppComponent {
       url: '/patients',
       icon: 'contacts',
       type: 'doctor'
-    },
-    {
-      title: 'Agendar Consulta',
-      url: '/calendar',
-      icon: 'calendar',
-      type: 'doctor'
-    },
+    },    
     {
       title: 'Instruções para o Teste',
       url: '/instructions',
@@ -77,6 +82,7 @@ export class AppComponent {
       this.splashScreen.hide();
       this.user = this.userService.user;
     });
+    firebase.initializeApp(config);
   }
 }
 
